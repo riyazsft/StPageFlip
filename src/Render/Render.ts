@@ -137,6 +137,7 @@ export abstract class Render {
      * Running requestAnimationFrame, and rendering process
      */
     public start(): void {
+        console.log("orientation12")
         this.update();
 
         const loop = (timer: number): void => {
