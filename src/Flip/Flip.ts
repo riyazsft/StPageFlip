@@ -134,7 +134,7 @@ export class Flip {
             this.bottomPage = this.app.getPageCollection().getBottomPage(direction);
 
             // In landscape mode, needed to set the density  of the next page to the same as that of the flipped
-            if (this.render.getOrientation() === Orientation.LANDSCAPE) {
+            // if (this.render.getOrientation() === Orientation.LANDSCAPE) {
                 if (direction === FlipDirection.BACK) {
                     const nextPage = this.app.getPageCollection().nextBy(this.flippingPage);
 
@@ -154,7 +154,7 @@ export class Flip {
                         }
                     }
                 }
-            }
+            // }
 
             this.render.setDirection(direction);
             this.calc = new FlipCalculation(
@@ -393,7 +393,7 @@ export class Flip {
             return FlipDirection.BACK;
         }
 
-        return FlipDirection.FORWARD;
+        return FlipDirection.BACK;
     }
 
     private getAnimationDuration(size: number): number {
