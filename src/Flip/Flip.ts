@@ -125,13 +125,13 @@ export class Flip {
         const direction = this.getDirectionByPoint(bookPos);
         // Find the active corner
         const flipCorner = bookPos.y >= rect.height / 2 ? FlipCorner.BOTTOM : FlipCorner.TOP;
+        console.log('direction123--->', direction,FlipDirection.BACK);
 
         if (!this.checkDirection(direction)) return false;
 
         try {
             this.flippingPage = this.app.getPageCollection().getFlippingPage(direction);
             this.bottomPage = this.app.getPageCollection().getBottomPage(direction);
-            console.log('direction123--->', direction,FlipDirection.BACK);
 
             // In landscape mode, needed to set the density  of the next page to the same as that of the flipped
             // if (this.render.getOrientation() === Orientation.LANDSCAPE) {
