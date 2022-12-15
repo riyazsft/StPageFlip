@@ -94,8 +94,8 @@ export class Flip {
         // Defining animation start points
         const yStart =
             this.calc.getCorner() === FlipCorner.BOTTOM ? rect.height - topMargins : topMargins;
-
         const yDest = this.calc.getCorner() === FlipCorner.BOTTOM ? rect.height : 0;
+        console.log("yStart",yStart,yDest)
 
         // Сalculations for these points
         this.calc.calc({ x: rect.pageWidth - topMargins, y: yStart });
