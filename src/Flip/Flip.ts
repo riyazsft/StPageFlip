@@ -131,7 +131,7 @@ export class Flip {
         try {
             this.flippingPage = this.app.getPageCollection().getFlippingPage(direction);
             this.bottomPage = this.app.getPageCollection().getBottomPage(direction);
-            console.log('direction123', direction,FlipDirection.BACK);
+            console.log('direction123--->', direction,FlipDirection.BACK);
 
             // In landscape mode, needed to set the density  of the next page to the same as that of the flipped
             // if (this.render.getOrientation() === Orientation.LANDSCAPE) {
