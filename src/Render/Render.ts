@@ -191,7 +191,7 @@ export abstract class Render {
     public update(): void {
         this.boundsRect = null;
         const orientation = this.calculateBoundsRect();
-        console.log("orientation",orientation)
+
         if (this.orientation !== orientation) {
             this.orientation = orientation;
             this.app.updateOrientation(orientation);

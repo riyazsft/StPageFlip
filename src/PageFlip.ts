@@ -46,7 +46,6 @@ export class PageFlip extends EventObject {
         super();
 
         this.setting = new Settings().getSettings(setting);
-        console.log("constructor123")
         this.block = inBlock;
     }
 
@@ -73,7 +72,6 @@ export class PageFlip extends EventObject {
      */
     public loadFromImages(imagesHref: string[]): void {
         this.ui = new CanvasUI(this.block, this, this.setting);
-        console.log('loadFromImages');
 
         const canvas = (this.ui as CanvasUI).getCanvas();
         this.render = new CanvasRender(this, this.setting, canvas);
@@ -104,7 +102,7 @@ export class PageFlip extends EventObject {
      */
     public loadFromHTML(items: NodeListOf<HTMLElement> | HTMLElement[]): void {
         this.ui = new HTMLUI(this.block, this, this.setting, items);
-        console.log('loadFromHTML');
+
         this.render = new HTMLRender(this, this.setting, this.ui.getDistElement());
 
         this.flipController = new Flip(this.render, this);

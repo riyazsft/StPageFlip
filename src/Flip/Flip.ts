@@ -123,9 +123,9 @@ export class Flip {
 
         // Find the direction of flipping
         const direction = this.getDirectionByPoint(bookPos);
+
         // Find the active corner
         const flipCorner = bookPos.y >= rect.height / 2 ? FlipCorner.BOTTOM : FlipCorner.TOP;
-        console.log('direction123--->', direction,FlipDirection.BACK);
 
         if (!this.checkDirection(direction)) return false;
 
@@ -134,7 +134,7 @@ export class Flip {
             this.bottomPage = this.app.getPageCollection().getBottomPage(direction);
 
             // In landscape mode, needed to set the density  of the next page to the same as that of the flipped
-            // if (this.render.getOrientation() === Orientation.LANDSCAPE) {
+            if (this.render.getOrientation() === Orientation.LANDSCAPE) {
                 if (direction === FlipDirection.BACK) {
                     const nextPage = this.app.getPageCollection().nextBy(this.flippingPage);
 
@@ -154,8 +154,8 @@ export class Flip {
                         }
                     }
                 }
-            // }
-console.log("direction123",direction,FlipDirection.BACK)
+            }
+
             this.render.setDirection(direction);
             this.calc = new FlipCalculation(
                 direction,
@@ -393,7 +393,7 @@ console.log("direction123",direction,FlipDirection.BACK)
             return FlipDirection.BACK;
         }
 
-        return FlipDirection.BACK;
+        return FlipDirection.FORWARD;
     }
 
     private getAnimationDuration(size: number): number {
