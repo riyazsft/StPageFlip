@@ -50,7 +50,7 @@
         "build-global": "npx webpack",
         "build": "rollup -c",
         "rm": "rm -r dist",
-        "push": "yarn build && git add . && git commit \"latest\" git push"
+        "push": "yarn build && git add . && git commit -m \"latest\" && git push"
     },
     "keywords": [
         "typescript",
