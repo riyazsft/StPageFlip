@@ -1,7 +1,7 @@
 {
     "name": "page-flip",
     "version": "2.0.7",
-    "main": "src/PageFlip.js",
+    "main": "dist/js/page-flip.browser.js",
     "browser": "dist/js/page-flip.browser.js",
     "author": "oleg.litovski9@gmail.com",
     "license": "MIT",

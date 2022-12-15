@@ -46,7 +46,7 @@ export class PageFlip extends EventObject {
         super();
 
         this.setting = new Settings().getSettings(setting);
-        console.log("constructor")
+        console.log("constructor123")
         this.block = inBlock;
     }
 
