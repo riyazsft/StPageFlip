@@ -155,7 +155,7 @@ export class Flip {
                     }
                 }
             // }
-console.log("direction",direction)
+console.log("direction",direction,FlipDirection.BACK)
             this.render.setDirection(direction);
             this.calc = new FlipCalculation(
                 direction,
