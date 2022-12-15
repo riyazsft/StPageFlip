@@ -92,18 +92,18 @@ export class Flip {
         const topMargins = rect.height / 10;
 
         // Defining animation start points
-        const yStart = this.calc.getCorner() === FlipCorner.BOTTOM ? rect.height : 0;
-        const yDest =
-        this.calc.getCorner() === FlipCorner.BOTTOM ? rect.height - topMargins : topMargins;
-        console.log("yStart",yStart,yDest)
+        const yStart =
+            this.calc.getCorner() === FlipCorner.BOTTOM ? rect.height - topMargins : topMargins;
+        const yDest = this.calc.getCorner() === FlipCorner.BOTTOM ? rect.height : 0;
 
         // Сalculations for these points
         this.calc.calc({ x: rect.pageWidth - topMargins, y: yStart });
-
+        console.log(' { x: -rect.pageWidth, y: yDest },');
         // Run flipping animation
         this.animateFlippingTo(
-            { x: rect.pageWidth - topMargins, y: yStart },
             { x: -rect.pageWidth, y: yDest },
+            { x: rect.pageWidth - topMargins, y: yStart },
+
             true
         );
     }
