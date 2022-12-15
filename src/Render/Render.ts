@@ -137,7 +137,6 @@ export abstract class Render {
      * Running requestAnimationFrame, and rendering process
      */
     public start(): void {
-        console.log("orientation12")
         this.update();
 
         const loop = (timer: number): void => {
@@ -192,7 +191,7 @@ export abstract class Render {
     public update(): void {
         this.boundsRect = null;
         const orientation = this.calculateBoundsRect();
-
+        console.log("orientation",orientation)
         if (this.orientation !== orientation) {
             this.orientation = orientation;
             this.app.updateOrientation(orientation);
