@@ -92,9 +92,9 @@ export class Flip {
         const topMargins = rect.height / 10;
 
         // Defining animation start points
-        const yStart =
-            this.calc.getCorner() === FlipCorner.BOTTOM ? rect.height - topMargins : topMargins;
-        const yDest = this.calc.getCorner() === FlipCorner.BOTTOM ? rect.height : 0;
+        const yStart = this.calc.getCorner() === FlipCorner.BOTTOM ? rect.height : 0;
+        const yDest =
+        this.calc.getCorner() === FlipCorner.BOTTOM ? rect.height - topMargins : topMargins;
         console.log("yStart",yStart,yDest)
 
         // Сalculations for these points
