@@ -97,9 +97,9 @@ export class Flip {
 
         const yDest = this.calc.getCorner() === FlipCorner.BOTTOM ? rect.height : 0;
         console.log(
-            'yStart123',
-            { x: rect.pageWidth - topMargins, y: yStart },
-            { x: -rect.pageWidth, y: yDest }
+            'yStart1234',
+            { x: yStart, y: rect.pageWidth - topMargins },
+            { x: yDest, y: -rect.pageWidth }
         );
         // Сalculations for these points
         this.calc.calc({ x: rect.pageWidth - topMargins, y: yStart });
