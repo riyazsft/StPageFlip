@@ -210,7 +210,7 @@ export class HTMLRender extends Render {
         const shadowTranslate = this.getDirection() === FlipDirection.BACK ? this.shadow.width : 0;
 
         const shadowDirection =
-            this.getDirection() === FlipDirection.FORWARD ? 'to right' : 'to left';
+            this.getDirection() === FlipDirection.BACK ? 'to right' : 'to left';
 
         const clip = [
             { x: 0, y: 0 },
@@ -257,7 +257,7 @@ export class HTMLRender extends Render {
             clip-path: ${polygon};
             -webkit-clip-path: ${polygon};
         `;
-
+console.log("newStyle1",newStyle)
         this.outerShadow.style.cssText = newStyle;
     }
 
