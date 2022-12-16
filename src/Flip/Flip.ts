@@ -163,7 +163,7 @@ export class Flip {
             this.render.setDirection(direction);
             console.log("flipCorner",flipCorner,direction)
             this.calc = new FlipCalculation(
-                direction,
+                1,
                 flipCorner,
                 rect.pageWidth.toString(10), // fix bug with type casting
                 rect.height.toString(10) // fix bug with type casting
