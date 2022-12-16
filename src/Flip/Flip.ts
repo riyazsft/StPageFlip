@@ -94,7 +94,7 @@ export class Flip {
         // Defining animation start points
         const yStart =
             this.calc.getCorner() === FlipCorner.BOTTOM ? rect.height - topMargins : topMargins;
-       
+
         const yDest = this.calc.getCorner() === FlipCorner.BOTTOM ? rect.height : 0;
         console.log(
             'yStart123',
@@ -194,7 +194,7 @@ export class Flip {
             this.flippingPage.setArea(this.calc.getFlippingClipArea());
             this.flippingPage.setPosition(this.calc.getActiveCorner());
             this.flippingPage.setAngle(this.calc.getAngle());
-
+            console.log('http://localhost:3000/');
             if (this.calc.getDirection() === FlipDirection.FORWARD) {
                 this.flippingPage.setHardAngle((-90 * (200 - progress * 2)) / 100);
             } else {
