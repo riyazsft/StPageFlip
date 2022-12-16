@@ -196,9 +196,9 @@ export class Flip {
             this.flippingPage.setAngle(this.calc.getAngle());
 
             if (this.calc.getDirection() === FlipDirection.FORWARD) {
-                this.flippingPage.setHardAngle((90 * (200 - progress * 2)) / 100);
-            } else {
                 this.flippingPage.setHardAngle((-90 * (200 - progress * 2)) / 100);
+            } else {
+                this.flippingPage.setHardAngle((90 * (200 - progress * 2)) / 100);
             }
 
             this.render.setPageRect(this.calc.getRect());
