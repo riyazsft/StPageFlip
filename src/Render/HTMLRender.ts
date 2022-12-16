@@ -194,7 +194,7 @@ export class HTMLRender extends Render {
             clip-path: ${polygon};
             -webkit-clip-path: ${polygon};
         `;
-
+        console.log('newStyle', newStyle);
         this.innerShadow.style.cssText = newStyle;
     }
 
