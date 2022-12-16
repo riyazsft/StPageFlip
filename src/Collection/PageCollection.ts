@@ -273,7 +273,7 @@ export abstract class PageCollection {
             this.render.setLeftPage(this.pages[spread[0]]);
             this.render.setRightPage(this.pages[spread[1]]);
         } else {
-            if (this.render.getOrientation() === Orientation.LANDSCAPE) {
+            if (this.render.getOrientation() !== Orientation.LANDSCAPE) {
                 if (spread[0] === this.pages.length - 1) {
                     this.render.setLeftPage(this.pages[spread[0]]);
                     this.render.setRightPage(null);

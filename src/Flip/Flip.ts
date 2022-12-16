@@ -161,7 +161,7 @@ export class Flip {
             }
 
             this.render.setDirection(direction);
-            console.log("flipCorner",flipCorner,direction)
+            console.log("flipCorner12",flipCorner,direction)
             this.calc = new FlipCalculation(
                 1,
                 flipCorner,
