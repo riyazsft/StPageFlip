@@ -97,18 +97,17 @@ export class Flip {
 
         const yDest = this.calc.getCorner() === FlipCorner.BOTTOM ? rect.height : 0;
         console.log(
-            'yStart1234->>',
-            { x: yStart, y: rect.pageWidth - topMargins },
-            { x: yDest, y: -rect.pageWidth }
+            'yStart123',
+            { x: rect.pageWidth - topMargins, y: yStart },
+            { x: -rect.pageWidth, y: yDest }
         );
         // Сalculations for these points
-        this.calc.calc({ x:yStart , y:  rect.pageWidth - topMargins });
+        this.calc.calc({ x: rect.pageWidth - topMargins, y: yStart });
 
         // Run flipping animation
         this.animateFlippingTo(
-            { x: yDest, y: -rect.pageWidth },
-            { x: yStart, y: rect.pageWidth - topMargins },
-        
+            { x: rect.pageWidth - topMargins, y: yStart },
+            { x: -rect.pageWidth, y: yDest },
             true
         );
     }
@@ -162,6 +161,7 @@ export class Flip {
             }
 
             this.render.setDirection(direction);
+            console.log("flipCorner",flipCorner,direction)
             this.calc = new FlipCalculation(
                 direction,
                 flipCorner,
@@ -195,7 +195,6 @@ export class Flip {
             this.flippingPage.setArea(this.calc.getFlippingClipArea());
             this.flippingPage.setPosition(this.calc.getActiveCorner());
             this.flippingPage.setAngle(this.calc.getAngle());
-            console.log('http://localhost:3000/');
             if (this.calc.getDirection() === FlipDirection.FORWARD) {
                 this.flippingPage.setHardAngle((-90 * (200 - progress * 2)) / 100);
             } else {
