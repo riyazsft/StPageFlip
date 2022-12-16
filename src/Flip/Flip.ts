@@ -96,11 +96,7 @@ export class Flip {
             this.calc.getCorner() === FlipCorner.BOTTOM ? rect.height - topMargins : topMargins;
 
         const yDest = this.calc.getCorner() === FlipCorner.BOTTOM ? rect.height : 0;
-        console.log(
-            'yStart123',
-            { x: rect.pageWidth - topMargins, y: yStart },
-            { x: -rect.pageWidth, y: yDest }
-        );
+
         // Сalculations for these points
         this.calc.calc({ x: rect.pageWidth - topMargins, y: yStart });
 
@@ -161,9 +157,8 @@ export class Flip {
             }
 
             this.render.setDirection(direction);
-            console.log("flipCorner12",flipCorner,direction)
             this.calc = new FlipCalculation(
-                1,
+                direction,
                 flipCorner,
                 rect.pageWidth.toString(10), // fix bug with type casting
                 rect.height.toString(10) // fix bug with type casting
@@ -195,10 +190,11 @@ export class Flip {
             this.flippingPage.setArea(this.calc.getFlippingClipArea());
             this.flippingPage.setPosition(this.calc.getActiveCorner());
             this.flippingPage.setAngle(this.calc.getAngle());
+
             if (this.calc.getDirection() === FlipDirection.FORWARD) {
-                this.flippingPage.setHardAngle((-90 * (200 - progress * 2)) / 100);
-            } else {
                 this.flippingPage.setHardAngle((90 * (200 - progress * 2)) / 100);
+            } else {
+                this.flippingPage.setHardAngle((-90 * (200 - progress * 2)) / 100);
             }
 
             this.render.setPageRect(this.calc.getRect());
