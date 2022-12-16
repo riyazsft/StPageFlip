@@ -144,7 +144,7 @@ export class HTMLRender extends Render {
         const shadowTranslate = this.getDirection() === FlipDirection.FORWARD ? innerShadowSize : 0;
 
         const shadowDirection =
-            this.getDirection() === FlipDirection.FORWARD ? 'to left' : 'to right';
+            this.getDirection() === FlipDirection.BACK ? 'to left' : 'to right';
 
         const shadowPos = this.convertToGlobal(this.shadow.pos);
 
