@@ -106,8 +106,9 @@ export class Flip {
 
         // Run flipping animation
         this.animateFlippingTo(
-            { x: yStart, y: rect.pageWidth - topMargins },
             { x: yDest, y: -rect.pageWidth },
+            { x: yStart, y: rect.pageWidth - topMargins },
+        
             true
         );
     }
