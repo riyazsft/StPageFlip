@@ -97,7 +97,7 @@ export class Flip {
 
         const yDest = this.calc.getCorner() === FlipCorner.BOTTOM ? rect.height : 0;
         console.log(
-            'yStart1234',
+            'yStart1234->',
             { x: yStart, y: rect.pageWidth - topMargins },
             { x: yDest, y: -rect.pageWidth }
         );
@@ -106,8 +106,8 @@ export class Flip {
 
         // Run flipping animation
         this.animateFlippingTo(
-            { x: rect.pageWidth - topMargins, y: yStart },
-            { x: -rect.pageWidth, y: yDest },
+            { x: yStart, y: rect.pageWidth - topMargins },
+            { x: yDest, y: -rect.pageWidth },
             true
         );
     }
